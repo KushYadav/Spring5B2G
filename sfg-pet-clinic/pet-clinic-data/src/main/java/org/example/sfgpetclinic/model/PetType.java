@@ -1,4 +1,4 @@
-package org.example.sgfpetclinic.model;
+package org.example.sfgpetclinic.model;
 
 /**
  * Create by Kush on 30-03-2021
