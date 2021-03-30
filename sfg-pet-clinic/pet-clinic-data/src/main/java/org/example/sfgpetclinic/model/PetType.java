@@ -3,7 +3,7 @@ package org.example.sfgpetclinic.model;
 /**
  * Create by Kush on 30-03-2021
  */
-public class PetType {
+public class PetType extends BaseEntity{
 
     private String name;
 
