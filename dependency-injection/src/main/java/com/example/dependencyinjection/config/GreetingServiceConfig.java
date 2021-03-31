@@ -5,14 +5,12 @@ import com.example.dependencyinjection.repository.EnglishGreetingRepositoryImpl;
 import com.example.dependencyinjection.service.*;
 import com.example.petsdi.service.PetService;
 import com.example.petsdi.service.PetServiceFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 
 /**
  * Create by Kush on 31-03-2021
  */
+@ImportResource("classpath:sfgdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {
 
@@ -57,7 +55,7 @@ public class GreetingServiceConfig {
         return new PrimaryGreetingService();
     }
 
-    @Bean
+//    @Bean
     ConstructorGreetingService constructorGreetingService(){
         return new ConstructorGreetingService();
     }
