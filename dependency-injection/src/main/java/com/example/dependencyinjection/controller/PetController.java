@@ -6,11 +6,10 @@ import org.springframework.stereotype.Controller;
 /**
  * Create by Kush on 28-03-2021
  */
-
 @Controller
 public class PetController {
 
-    private PetService petService;
+    private final PetService petService;
 
     public PetController(PetService petService) {
         this.petService = petService;

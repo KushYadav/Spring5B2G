@@ -1,6 +1,10 @@
 package com.example.dependencyinjection.config;
 
+import com.example.dependencyinjection.repository.EnglishGreetingRepository;
+import com.example.dependencyinjection.repository.EnglishGreetingRepositoryImpl;
 import com.example.dependencyinjection.service.*;
+import com.example.petsdi.service.PetService;
+import com.example.petsdi.service.PetServiceFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -12,16 +16,39 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 public class GreetingServiceConfig {
 
+    @Bean
+    PetServiceFactory petServiceFactory(){
+        return new PetServiceFactory();
+    }
+
+    @Profile({"dog","default"})
+    @Bean
+    PetService dogPetService(PetServiceFactory petServiceFactory){
+        return petServiceFactory.getPetService("dog");
+    }
+
+    @Profile("cat")
+    @Bean
+    PetService catPetService(PetServiceFactory petServiceFactory){
+        return petServiceFactory.getPetService("cat");
+    }
+
     @Profile("ES")
     @Bean("i18NService")
     I18NSpanishGreetingService i18NSpanishGreetingService(){
         return new I18NSpanishGreetingService();
     }
 
+    @Bean
+    EnglishGreetingRepositoryImpl englishGreetingRepository(){
+        return new EnglishGreetingRepositoryImpl();
+    }
+
+
     @Profile({"EN", "default"})
     @Bean
-    I18NEnglishGreetingService i18NService(){
-        return new I18NEnglishGreetingService();
+    I18NEnglishGreetingService i18NService(EnglishGreetingRepository englishGreetingRepository){
+        return new I18NEnglishGreetingService(englishGreetingRepository);
     }
 
     @Primary
