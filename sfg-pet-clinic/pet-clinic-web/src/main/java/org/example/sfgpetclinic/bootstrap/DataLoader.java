@@ -1,13 +1,10 @@
-package org.example.sgfpetclinic.bootstrap;
+package org.example.sfgpetclinic.bootstrap;
 
 import org.example.sfgpetclinic.model.Owner;
 import org.example.sfgpetclinic.model.Vet;
 import org.example.sfgpetclinic.service.OwnerService;
-import org.example.sfgpetclinic.service.OwnerServiceMap;
 import org.example.sfgpetclinic.service.VetService;
-import org.example.sfgpetclinic.service.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.web.reactive.filter.OrderedWebFilter;
 import org.springframework.stereotype.Component;
 
 /**
@@ -19,11 +16,10 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader(){
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
-
 
     @Override
     public void run(String... args) throws Exception {
@@ -59,7 +55,5 @@ public class DataLoader implements CommandLineRunner {
         vetService.save(vet2);
 
         System.out.println("Loaded vets");
-
-
     }
 }

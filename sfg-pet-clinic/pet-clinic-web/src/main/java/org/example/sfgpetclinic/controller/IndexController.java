@@ -1,4 +1,4 @@
-package org.example.sgfpetclinic.controller;
+package org.example.sfgpetclinic.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
