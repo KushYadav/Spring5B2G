@@ -1,11 +1,12 @@
 package com.example.dependencyinjection;
 
 import com.example.dependencyinjection.controller.*;
-import com.example.dependencyinjection.service.PetService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
+@ComponentScan(basePackages = {"com.example.dependencyinjection","com.example.petsdi"})
 @SpringBootApplication
 public class DependencyInjectionApplication {
 

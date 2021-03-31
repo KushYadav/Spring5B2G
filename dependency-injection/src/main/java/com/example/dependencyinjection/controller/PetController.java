@@ -1,6 +1,6 @@
 package com.example.dependencyinjection.controller;
 
-import com.example.dependencyinjection.service.PetService;
+import com.example.petsdi.service.PetService;
 import org.springframework.stereotype.Controller;
 
 /**

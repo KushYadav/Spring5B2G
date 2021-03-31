@@ -1,4 +1,4 @@
-package com.example.dependencyinjection.service;
+package com.example.petsdi.service;
 
 /**
  * Create by Kush on 28-03-2021
