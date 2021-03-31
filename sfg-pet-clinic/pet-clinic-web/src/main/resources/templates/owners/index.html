@@ -20,9 +20,9 @@
     </thead>
     <tbody>
     <tr th:each="owner : ${owners}">
-        <td th:text="${owner?.getId()}">1</td>
-        <td th:text="${owner?.getFirstName()}">A1</td>
-        <td th:text="${owner?.getLastName()}">A2</td>
+        <td th:text="${owner.getId()}">1</td>
+        <td th:text="${owner.getFirstName()}">A1</td>
+        <td th:text="${owner.getLastName()}">A2</td>
     </tr>
     </tbody>
     </tr>
