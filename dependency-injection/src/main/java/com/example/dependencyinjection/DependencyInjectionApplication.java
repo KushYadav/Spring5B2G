@@ -1,6 +1,7 @@
 package com.example.dependencyinjection;
 
 import com.example.dependencyinjection.controller.*;
+import com.example.dependencyinjection.datasource.FakeDataSource;
 import com.example.dependencyinjection.service.PrototypeBean;
 import com.example.dependencyinjection.service.SingletonBean;
 import org.springframework.boot.SpringApplication;
@@ -50,6 +51,12 @@ public class DependencyInjectionApplication {
         System.out.println(prototypeBean1.getMyScope());
         PrototypeBean prototypeBean2 = applicationContext.getBean(PrototypeBean.class);
         System.out.println(prototypeBean2.getMyScope());
+
+        FakeDataSource fakeDataSource = applicationContext.getBean(FakeDataSource.class);
+        System.out.println(fakeDataSource.getUsername());
+        System.out.println(fakeDataSource.getPassword());
+        System.out.println(fakeDataSource.getJdbcurl());
+
 
     }
 
