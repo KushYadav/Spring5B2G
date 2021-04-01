@@ -1,5 +1,6 @@
 package com.example.dependencyinjection;
 
+import com.example.dependencyinjection.config.SfgConfig;
 import com.example.dependencyinjection.controller.*;
 import com.example.dependencyinjection.datasource.FakeDataSource;
 import com.example.dependencyinjection.service.PrototypeBean;
@@ -56,6 +57,13 @@ public class DependencyInjectionApplication {
         System.out.println(fakeDataSource.getUsername());
         System.out.println(fakeDataSource.getPassword());
         System.out.println(fakeDataSource.getJdbcurl());
+
+        System.out.println("Config Props Beans");
+
+        SfgConfig sfgConfig = applicationContext.getBean(SfgConfig.class);
+        System.out.println(sfgConfig.getUsername());
+        System.out.println(sfgConfig.getPassword());
+        System.out.println(sfgConfig.getJdbcurl());
 
 
     }
