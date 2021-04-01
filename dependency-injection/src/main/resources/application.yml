@@ -1,8 +1,23 @@
 spring:
   profiles:
-    active: dog,EN,qa
+    active:
+      - dog
+      - EN
+      - prod
 
 ds:
   username: YAMLusername
   password: YAMLpassword
   jdbcurl: YAMLrandomUrl
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+ds:
+  username : YAMLprodUserName
+  password : YAMLprodPassword
+  jdbcurl : YAMLprodRandomUrl
+
