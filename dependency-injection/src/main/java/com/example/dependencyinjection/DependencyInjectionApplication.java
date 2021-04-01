@@ -1,6 +1,7 @@
 package com.example.dependencyinjection;
 
 import com.example.dependencyinjection.config.SfgConfig;
+import com.example.dependencyinjection.config.SfgConstructorConfig;
 import com.example.dependencyinjection.controller.*;
 import com.example.dependencyinjection.datasource.FakeDataSource;
 import com.example.dependencyinjection.service.PrototypeBean;
@@ -65,6 +66,12 @@ public class DependencyInjectionApplication {
         System.out.println(sfgConfig.getPassword());
         System.out.println(sfgConfig.getJdbcurl());
 
+        System.out.println("Constructor Binding");
+
+        SfgConstructorConfig sfgConstructorConfig = applicationContext.getBean(SfgConstructorConfig.class);
+        System.out.println(sfgConstructorConfig.getUsername());
+        System.out.println(sfgConstructorConfig.getPassword());
+        System.out.println(sfgConstructorConfig.getJdbcurl());
 
     }
 
