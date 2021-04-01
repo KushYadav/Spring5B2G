@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: dog,EN,qa
+
+ds:
+  username: YAMLusername
+  password: YAMLpassword
+  jdbcurl: YAMLrandomUrl

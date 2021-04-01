@@ -1,0 +1,4 @@
+ds:
+  username : YAMLqaUserName
+  password : YAMLqaPassword
+  jdbcurl : YAMLqaRandomUrl

@@ -1,0 +1,4 @@
+ds:
+  username : YAMLdevUserName
+  password : YAMLdevPassword
+  jdbcurl : YAMLdevRandomUrl
